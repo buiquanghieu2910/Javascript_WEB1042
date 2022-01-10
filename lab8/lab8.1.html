@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app="myapp" ng-controller="myctrl">
+        <h2> Phép tính: {{a}} {{pt}} {{b}} = {{kq}} </h2>
+
+        <input type="number" ng-model="a">
+
+        <select name="" id="" ng-model="pt">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <input type="text" ng-model="b">
+
+        <button ng-click="tinh()">=</button>
+
+        <input type="text" ng-model="kq">
+    </div>
+
+    <script>
+        var app = angular.module("myapp", []).controller("myctrl", function($scope) {
+            $scope.a = 0;
+            $scope.b = 0;
+            $scope.kq = 0;
+            $scope.pt = '+';
+            $scope.tinh = function() {
+                switch ($scope.pt) {
+                    case '+':
+                        $scope.kq = parseFloat($scope.a) + parseFloat($scope.b);
+                        break;
+
+                    case '-':
+                        $scope.kq = parseFloat($scope.a) - parseFloat($scope.b);
+                        break;
+
+                    case '*':
+                        $scope.kq = parseFloat($scope.a) * parseFloat($scope.b);
+                        break;
+
+                    case '/':
+                        $scope.kq = parseFloat($scope.a) / parseFloat($scope.b);
+                        break;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

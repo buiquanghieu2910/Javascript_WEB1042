@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="lab41">
+
+        <script>
+            var ptb2 = new Object();
+         ptb2.a = prompt("Hệ số a = ");
+         ptb2.b = prompt("Hệ số b = ");
+         ptb2.c = prompt("Hệ số c = ");
+     
+         // document.write(ptb2.a, ptb2.b, ptb2.c);
+         document.write("Phương trình bậc 2 của bạn có dạng <br>");
+         document.write(+ptb2.a + "x2 + " + ptb2.b + "x + " + ptb2.c + " = 0");
+     
+     ptb2.giai = function () {
+         var tinhDelta = Math.pow(ptb2.b, 2) - 4 * ptb2.a * ptb2.c;
+         // document.write(tinhDelta);
+     
+         if (tinhDelta < 0) {
+             alert("Phương trình vô nghiệm");
+     
+         }
+         else if (tinhDelta == 0) {
+             var x = -ptb2.b / 2 * ptb2.a;
+             alert("Phương trình có nghiệm kép x= " + x);
+     
+         }
+         else {
+             var x1 = (-ptb2.b + Math.sqrt(tinhDelta)) / (2 * ptb2.a);
+             var x2 = (-ptb2.b - Math.sqrt(tinhDelta)) / (2 * ptb2.a);
+     
+             alert("Phương trình có 2 nghiệm x1= " + x1 + "; x2= " + x2);
+         }
+     }
+         </script>
+          
+          <br>
+         <button onclick="ptb2.giai()">GIẢI</button>
+
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <script src="js/styles1.js"></script>
+</head>
+
+<body>
+    <form action="" method="POST" name="form1" onsubmit="return validateForm()">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td><input class="khung" type="text" id="name"></td>
+                </tr>
+
+                <tr>
+                    <td>Sex</td>
+                    <td>
+                        <input name="gt" type="radio" id="sex">
+                        <label for="M">Male</label>
+                        <br>
+                        <input name="gt" type="radio" id="sex">
+                        <label for="F">Female</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Eye color</td>
+                    <td>
+                        <select>
+                            <option>Green</option>
+                            <option>Black</option>
+                            <option>Blue</option>                         
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Check all that apply</td>
+                    <td>
+                        <label><input type="checkbox" name="">Over 6 feet tall</label>
+                        <br>
+                        <label><input type="checkbox" name="">Over 200 pounds</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">Describe your athletic ability:
+                        <br>
+                        <textarea cols="55" rows="5"></textarea> </td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th colspan="2"><button class="button" type="submit">Enter my information</button></th>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+
+</body>
+
+</html>

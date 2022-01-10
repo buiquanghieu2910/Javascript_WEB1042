@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <script>
+        function them(button) {
+            // khai báo dòng
+            var row = button.parentElement.parentElement.cloneNode(true);
+            var btnXoa = row.getElementsByTagName("button")[0];
+            btnXoa.innerText = "Xóa";
+            btnXoa.setAttribute('onclick', 'xoa(this)');
+            // paste
+            document.getElementById("gioHang").appendChild(row);
+            tongTien();
+        }
+
+
+
+        // function xoa(btn1)
+        // {
+        //     // xác định dòng
+        //     var row = btn1.parentElement.parentElement;
+
+        //     document.getElementById("gioHang").removeChild(row);
+
+        // }
+
+        function xoa(button) {
+            var row = button.parentElement.parentElement;//xac dinh dong can xoa
+
+            document.getElementById("gioHang").removeChild(row);//thuc hien xoa
+            tongTien();
+        }
+
+        function tongTien() {
+            var cart = document.getElementById("gioHang");
+            var rows = cart.getElementsByTagName("tr");
+
+            var tong = 0;
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName("td");
+                var price = cells[1].innerText.substr(1);
+                tong += 1 * price;
+            }
+            document.getElementById("tong").innerText = tong;
+            document.getElementById("empty").style.display = "none";
+            document.getElementById("not-empty").style.display = "";
+            document.getElementById("tong").style.backroundColor = "yellow";
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <h3>DANH MỤC HÀNG HÓA</h3>
+    <table border="1">
+        <tr>
+            <td>iPhone 9</td>
+            <td>$2700</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+
+        <tr>
+            <td>Samsung Star</td>
+            <td>$1500</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+
+        <tr>
+            <td>Nokia 2020</td>
+            <td>$1200</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+
+        <tr>
+            <td>Sony Xperia</td>
+            <td>$1700</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+    </table>
+
+    <h3>GIỎ HÀNG CỦA BẠN</h3>
+    <h3 id="empty">Bạn chưa chọn mặt hàng nào</h3>
+    <div id="not-empty" style="display: none;">
+        <table border="1" id="gioHang"></table>
+
+        <h3>TỔNG SỐ TIỀN: $<span id="tong">0</span></h3>
+    </div>
+</body>
+
+</html>

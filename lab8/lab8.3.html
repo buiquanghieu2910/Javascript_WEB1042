@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <script src="angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app="myapp" ng-init="a=100">
+        <h1>Root gọi biến a: {{a}}</h1>
+        <div ng-controller="myctrl1" ng-init="b=50">
+            <h1>Cha gọi biến b: {{b}} </h1>
+            <!-- <h1>Từ Ctrl1, gọi biến trong Ctrl2: {{ bienctrl2 }} </h1> -->
+            <h1 ng=controller="conctrl" ng-init="c=8">
+                Con gọi biến c: {{c}} <br> Con gọi biến b: {{b}} <br> Con gọi biến a: {{a}} <br>
+            </h1>
+
+        </div>
+
+        <!-- <div ng-controller="myctrl2">
+            <h1>Từ Ctrl2, gọi biến trong Ctrl1: {{ bienctrl1 }} </h1>
+            <h1>Từ Ctrl2, gọi biến trong Ctrl2: {{ bienctrl2 }} </h1>
+
+        </div> -->
+    </div>
+
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl1", function($scope, $rootScope) {
+            // $rootScope.bienctrl1 = "Tôi ở Ctrl1";
+        });
+
+        app.controller("myctrl2", function($scope, $rootScope) {
+            // $rootScope.bienctrl2 = "Tôi ở Ctrl2";
+        });
+    </script>
+
+</body>
+
+</html>

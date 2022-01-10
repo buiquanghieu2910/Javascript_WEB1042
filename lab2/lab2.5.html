@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bùi Quang Hiếu</title>
+    <script>
+        function phuongTrinh()
+        {
+            alert("Phương trình bậc 2 có dạng: <br> ax2 + bx + c = 0 ");
+            var a = prompt("Mời bạn nhập hệ số a= ");
+            var b = prompt("Mời bạn nhập hệ số b= ");
+            var c = prompt("Mời bạn nhập hệ số c= ");
+            var delta = Math.pow(b, 2) - 4*a*c;
+
+            if (delta < 0) {
+                document.write("Phương trình vô nghiệm <br>");
+                
+            }
+
+            else if (delta == 0) {
+                document.write("Phương trình có nghiệm kép x= "+(-b)/2*a);
+                
+            }
+
+            else{
+                document.write("Phương trình có 2 nghiệm riêng biệt <br>");
+                var x1 = (-b + Math.sqrt(delta)) / (2*a);
+                var x2 = (-b - Math.sqrt(delta)) / (2*a);
+                document.write("x1= "+x1+ "<br>");
+                document.write("x1= "+x1);
+            };
+
+        }
+ 
+    </script>
+</head>
+<body>
+    <script>
+        phuongTrinh();
+
+    </script>
+    
+</body>
+</html>

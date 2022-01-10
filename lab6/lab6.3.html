@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <script src="angular.min.js"></script>
+    <script src="js.js"></script>
+</head>
+
+<body>
+    <div ng-app="myapp" ng-controller="myctrl" ng-mouseover="dongia()">
+
+        <h1>HÓA ĐƠN</h1>
+        <form method="POST" name="form1" onsubmit="return validateForm()">
+            Khách hàng <input type="text" name="txtSanPham" id="txtSanPham">
+            <br> Loại hàng:
+            <select name="loai" id="txtLoai" ng-model="loai">
+        <option value="0">Vui lòng chọn</option>
+        <option value="1">Loại 1</option>
+        <option value="2">Loại 2</option>
+        <option value="3">Loại 3</option>
+    </select>
+            <br><label for="">Đơn giá</label>
+            <input type="text" id="txtDonGia" value="{{donGia}}">
+            <!-- <input type="text" name="txtDonGia" id="txtDonGia" ng-model="a"> -->
+            <br> Số lượng <input type="number" value="0" min="0" id="txtSL" ng-model="soLuong">
+            <br> Thành tiền <input type="text" id="txtThanhTien" value="{{kq}}">
+            <br> Nơi nhận hàng:
+            <input type="radio" name="radio" value="Nội Thành" onclick="hienThi(false);">Nội Thành
+            <input type="radio" name="radio" value="Ngoại Thành" onclick="hienThi(true);">Ngoại Thành
+            <br>
+            <label for="" id="gia">Phí vận chuyển: 30000</label>
+            <br><br>
+            <input type="submit" value="Đặt mua" onclick="saveToCookie();">
+
+
+        </form>
+        <!-- <h2> Phép tính: {{a}} {{pt}} {{b}} = {{kq}} </h2> -->
+    </div>
+    <!-- <div id="show"></div> -->
+
+    <div id="resutl"></div>
+
+    <script>
+        function saveToCookie() {
+
+            var khachHang = document.getElementById("txtSanPham").value;
+            var loaiHang = document.getElementById("txtLoai").value;
+            var donGia = document.getElementById("txtDonGia").value;
+            var soLuong = document.getElementById("txtSL").value;
+            var thanhTien = document.getElementById("txtThanhTien").value;
+            var radios = document.getElementsByName("radio");
+
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked === true) {
+                    radios = radios[i];
+                }
+            }
+
+            document.cookie = "khachHang=" + khachHang;
+            document.cookie = "loaiHang=" + loaiHang;
+            document.cookie = "donGia=" + donGia;
+            document.cookie = "soLuong=" + soLuong;
+            document.cookie = "thanhTien=" + thanhTien;
+            document.cookie = "radio=" + radios;
+
+
+            // document.write("Khách hàng: " + khachHang +
+            //     "<br>Loại hàng: Loại " + loaiHang +
+            //     "<br>Đơn giá: " + donGia +
+            //     "<br>Số lượng: " + soLuong +
+            //     "<br>Thành tiền: " + thanhTien +
+            //     "<br>Nơi nhận hàng: " + radios.value);
+            var resutltTag = document.getElementById('result')
+            var cookies = document.cookie
+                // resutltTag.innerHTML = cookies
+            alert(cookies);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <script>
+        function hienThi(visible) {
+            var phi_vc = document.getElementById("gia");
+            phi_vc.style.display = visible ? "" : "none";
+        }
+
+        function validateForm() //xác thực các điều kiện
+        {
+            var sanPham = document.getElementById("txtSanPham"); //truy xuất vào thành phần của form
+            if (sanPham.value.length == 0) {
+                alert("Vui lòng nhập tên Sản phẩm");
+                return false;
+            }
+            //validate đơn giá
+            var gia = document.getElementById("txtDonGia").value;
+            // alert(Number(gia));
+            if (Number(gia) <= 0) {
+
+                alert("Đơn giá vui lòng nhập số nhập một số dương !");
+                return false;
+            }
+            // alert(Number(gia));
+            // return true;
+            var loai = document.getElementById("loai");
+            if (loai.value.length == 0) {
+                alert("Vui lòng chọn loại sản phẩm!");
+                return false;
+            }
+
+            var radios = document.getElementsByName("radio");
+            if (!radios[0].checked && !radios[1].checked) {
+                alert("Vui lòng chọn nơi nhận hàng !");
+                return false;
+
+            }
+            alert("Sản phẩm: " + sanPham.value);
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>ĐẶT HÀNG</h1>
+    <form action="" method="POST" name="form1" onsubmit="return validateForm()">
+        Sản phẩm <input type="text" name="txtSanPham" id="txtSanPham">
+        <br> Loại:
+        <select name="loai" id="loai">
+        <option value="MayTinh">Máy tính</option>
+        <option value="DienThoai">Điện thoại</option>
+    </select>
+        <br> Đơn giá <input type="text" name="txtDonGia" id="txtDonGia">
+        <br> Nơi nhận hàng:
+        <input type="radio" name="radio" value="NoiThanh" onclick="hienThi(false);">Nội Thành
+        <input type="radio" name="radio" value="NgoaiThanh" onclick="hienThi(true);">Ngoại Thành
+        <br>
+        <label for="" id="gia">Phí vận chuyển: 10000</label>
+        <hr>
+        <input type="submit" value="Đặt mua">
+    </form>
+</body>
+
+</html>

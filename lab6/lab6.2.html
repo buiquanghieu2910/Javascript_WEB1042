@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <script>
+        var images = [];
+        for (var i = 0; i < 6; i++) {
+            images[i] = new Image();
+            images[i].src = "images/" + i + ".JPG";
+
+        }
+        var index = 0;
+
+        function first() {
+            index = 0;
+            var anh = document.getElementById("anh");
+            anh.src = images[index].src;
+        }
+
+        function last() {
+            index = images.length - 1;
+            var anh = document.getElementById("anh");
+            anh.src = images[index].src;
+        }
+
+        function next() {
+            index++;
+            if (index >= images.length) {
+                index = 0;
+            }
+            var anh = document.getElementById("anh");
+            anh.src = images[index].src;
+
+
+        }
+
+        function prev() {
+            index--;
+            if (index < 0) {
+                index = images, length - 1;
+            }
+            var anh = document.getElementById("anh");
+            anh.src = images[index].src;
+
+        }
+    </script>
+</head>
+
+<body align="center">
+    <img id="anh" src="images/0.JPG" alt="">
+    <hr>
+    <button onclick="first()">First</button>
+    <button onclick="next()">Next</button>
+    <button onclick="prev()">Prev</button>
+    <button onclick="last()">Last</button>
+</body>
+
+</html>

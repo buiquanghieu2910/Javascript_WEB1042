@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        var wd;
+        function mo() {
+            wd = window.open();
+        }
+
+        function dong() {
+            if (wd.closed == false) {
+                wd.close();
+            }
+        }
+
+        function kiemtra() {
+            if (wd.closed == false) {
+                alert("Trang Wed chưa được đóng");
+            }
+
+            else {
+                alert("Trang Web đã được đóng");
+            }
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    <div class="lab44">
+
+        <button id="button1" value="Open" onclick="mo()">Mở cửa sổ mới</button>
+        <button id="button1" value="Close" onclick="dong()">Đóng cửa sổ mới</button>
+        <button id="button1" value="Check" onclick="kiemtra()">Kiểm tra cửa sổ mới đã đóng hay chưa</button>
+
+    </div>
+</body>
+
+</html>

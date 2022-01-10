@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/styles.js"></script>
+</head>
+
+<body>
+    <div class="ass22">
+        <h1>ĐĂNG KÝ THÀNH VIÊN</h1>
+        <form action="" method="POST" name="form1" onsubmit="return validateForm()">
+            <label for="">Mã sinh viên</label><br>
+            <input class="khung" type="text" id="mSV">
+            <br>
+            <label for="">Họ và tên</label><br>
+            <input class="khung" type="text" id="ten">
+            <br>
+            <label for="">Email</label><br>
+            <input class="khung" type="email" id="email">
+            <br>
+            <label for="">Giới tính</label><br>
+            <fieldset id="gioiTinh">
+                <input name="gt" type="radio" id="M">
+                <label for="M">Nam</label>
+                <input name="gt" type="radio" id="F">
+                <label for="F">Nữ</label>
+            </fieldset>
+            <label for="">Sở thích</label>
+            <fieldset>
+                <label><input type="checkbox" name="">Đọc sách</label>
+                <label><input type="checkbox" name="">Du lịch</label>
+                <label><input type="checkbox" name="">Âm nhạc</label>
+                <label><input type="checkbox" name="">Ẩm thực</label>
+                <label><input type="checkbox" name="">Khác</label>
+            </fieldset>
+            <label>Quốc tịch:</label> <br>
+            <select>
+				<option>Việt Nam</option>
+				<option>Lào</option>
+				<option>Mỹ</option>
+				<option>Campuchia</option>
+				<option>Hàn Quốc</option>
+			</select>
+
+            <br>
+            <label>Ghi chú:</label><br>
+            <textarea maxlength="200" cols="58" rows="5" placeholder="Ghi chú"></textarea>
+
+            <br>
+            <button class="button" type="submit">Đăng ký</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

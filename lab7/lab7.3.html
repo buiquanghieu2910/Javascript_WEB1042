@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+</head>
+
+<body ng-app="myapp" ng-controller="myctrl">
+    <h1 ng-mouseover="count = count + 1 ">Đưa chuột vào đây</h1>
+    <h1>{{count}}</h1>
+    <script>
+        angular.module("myapp", []).controller("myctrl", function($scope) {
+            $scope.count = 0;
+        });
+    </script>
+</body>
+
+</html>

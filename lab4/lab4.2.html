@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="lab42">
+
+    <script>
+         var sv = new Object();
+        sv.hoTen = prompt("Mời bạn nhập họ tên sinh viên");
+        sv.diem = prompt("Mời bạn nhập điểm của sinh viên");
+
+        sv.hienThi = function()
+        {
+            if (this.diem >= 8) {
+                this.hocLuc ="Giỏi";
+            }
+
+            else if (this.diem >= 6.5) {
+                this.hocLuc = "Khá";
+            }
+
+            else if (this.diem >= 5) {
+                this.hocLuc = "Trung bình";
+            }
+
+            else{
+                this.hocLuc = "Yếu"
+            }
+            
+            document.write("<h3>Họ và tên: "+this.hoTen+"</h3>");
+            document.write("<h3>Điểm: "+this.diem+"</h3>");
+            document.write("<h3>Học lực: "+this.hocLuc+"</h3>");
+        
+        }
+        
+    </script>
+     <button onclick="sv.hienThi()">Hiển thị</button>
+     </div>
+</body>
+</html>

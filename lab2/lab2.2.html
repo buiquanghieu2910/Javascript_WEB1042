@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bùi Quang Hiếu</title>
+    <script>
+        function hamToanHoc() // định nghĩa hàm
+        { 
+            var x = prompt("Mời bạn nhập 1 số bất kì: ");
+
+            if (isNaN(x)) {
+                alert(x+" không phải là số. Mời bạn nhập số khác");
+                hamToanHoc();
+                // x = prompt("Mời bạn nhập 1 số bất kì: ");
+            }
+
+            
+            var canbachai = Math.sqrt(x);
+            document.writeln("Căn bậc hai của "+x+" là: " +canbachai.toFixed(2)+"<br>");
+            document.writeln("Bình phương của "+x+" là: " +Math.pow(x,2)+"<br>");
+            document.writeln("Làm tròn số đã nhập là: "+Math.round(x)+"<br>");
+        }
+
+    </script>
+</head>
+<body>
+
+    <script>
+        hamToanHoc();
+
+    </script>
+    
+</body>
+</html>

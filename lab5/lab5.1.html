@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <script>
+        function tinhToan()
+        {
+            //truy cập vào pro, qty
+            var pro = document.getElementById('prod');
+            var qty = document.getElementById('qty');
+            var ten = prod.innerText;
+            // đưa dữ liệu của biến TEN vào label có id là NAME;
+            document.getElementById('name').innerText = ten;
+            //Tính tiền
+            // Lấy đơn giá
+            var donGia = prod.getAttribute("data-price");
+            var sl = qty.value; // chuyển đổi thành giá trị
+            var tongTien = sl * donGia;
+            // Đưa tổng tiền lên amount
+            document.getElementById('tien').innerText = tongTien;
+
+        }
+
+    </script>
+</head>
+<body>
+
+    <label for="" id="prod" data-price="1950">iPhone 9</label>
+    <input type="number" value="1" id="qty">
+    <button onclick="tinhToan()">OK</button>
+    <hr>
+    <h1>Name: <label for="" id="name">?</label></h1>
+    <h1>Amount: <label for="" id="tien">?</label></h1>
+    
+</body>
+</html>

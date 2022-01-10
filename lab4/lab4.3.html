@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+       function clock(){
+   //Khởi tạo đối tượng timer sử dụng Date Object
+   var timer = new Date();
+   //Gọi các phương thức của đối tượng timer
+   var hour = timer.getHours();  //Lấy giờ hiện tại (giá trị từ 0 - 23)
+   var minute = timer.getMinutes();  //Lấy phút hiện tại
+   var second = timer.getSeconds();  //Lấy giây  hiện tại
+   //Thêm ký tự 0 đằng trước nếu giờ, phút, giây < 10 với câu lệnh điều khiển if
+   if(hour < 10) {
+       hour = "0" + hour;
+   }
+   if(minute < 10) {
+       minute = "0" + minute;
+   }
+   if(second < 10) {
+       second = "0" + second;
+   }
+   //Hiện thị thời gian lên thẻ div id="clock" với phương thức innerHTML
+   document.getElementById("clock").innerHTML = hour + ":" + minute + ":" + second;
+}
+//Thực hiện hàm clock theo chu kỳ 1 giây
+setInterval("clock()",1000);
+    </script>
+</head>
+
+<body>
+    <div class="lab43">
+    <label id='clock'></label>
+
+    <script>
+        clock();
+    </script>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+body {
+    width: 500px;
+    padding: 0;
+    margin: 0 atuo;
+    float: left;
+}
+
+body h1 {
+    text-align: center;
+}
+
+.price {
+    text-align: center;
+}
+
+.self {
+    text-align: center;
+}
+
+.self tfoot {
+    font-size: 13pt;
+}

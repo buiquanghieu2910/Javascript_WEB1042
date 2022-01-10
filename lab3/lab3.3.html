@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <script>
+        function doan()
+        {
+            var ngauNhien = Math.round(Math.random()*100);
+            var doanSo = prompt("Mời bạn đoán số ngẫu nhiên: ");
+
+            if (Number(doanSo) == ngauNhien) 
+            {
+              alert("Bạn đã đoán đúng, số ngẫu nhiên là: "+ngauNhien);  
+            }
+
+            else if (Number(doanSo) > ngauNhien) 
+            {
+              alert("Bạn đã đoán sai, số bạn đoán lớn hơn số nhiên, số ngẫu nhiên là: "+ngauNhien);  
+            }
+
+            else
+            {
+                alert("Bạn đã đoán sai, số bạn đoán nhỏ hơn số nhiên, số ngẫu nhiên là: "+ngauNhien); 
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        doan();
+    </script>
+    
+</body>
+</html>

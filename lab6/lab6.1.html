@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <script>
+        var img1 = new Image();
+        var img2 = new Image();
+
+        function loadAnh() {
+            img1.src = "images/0.jpg";
+            img2.src = "images/1.jpg";
+
+        }
+
+        function fover() {
+            document.anh.src = "images/1.jpg";
+
+        }
+
+        function fout() {
+            document.anh.src = "images/0.jpg";
+
+        }
+    </script>
+</head>
+
+<body align="center" onload="loadAnh();">
+
+    <img id="anh" name="anh" src="images/0.jpg" alt="" onmouseover="fover();" onmouseout="fout();">
+
+</body>
+
+</html>

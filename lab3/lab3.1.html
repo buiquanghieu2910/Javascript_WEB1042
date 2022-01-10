@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <script>
+        function mayTinh()
+        {
+            
+            var a = prompt("a= ");
+            var b = prompt("b= ");
+            var o = prompt("Phép tính: + - * / ");
+            var c = 0;
+            switch(o)
+            {
+                case '+':
+                    c = Number(a) + Number(b);
+                    alert("Tổng là: "+c);
+                    break;
+
+                case '-':
+                    c = Number(a) - Number(b);
+                    alert("Hiệu là: "+c);
+                    break;
+
+                case '*':
+                    c = Number(a) * Number(b);
+                    alert("Tích là: "+c);
+                    break;
+                    
+                case '/':
+                    c = Number(a) / Number(b);
+                    alert("Thương là: "+c);
+                    break;
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <script>
+        mayTinh();
+
+    </script>
+    
+</body>
+</html>

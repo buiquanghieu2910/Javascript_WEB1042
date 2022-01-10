@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÙI QUANG HIẾU</title>
+    <script src="angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <div ng-controller="myctrl">
+        <h1>Thông tin: {{ info.fpl }}</h1>
+        <h1>Khóa học: {{ info.course }}</h1>
+
+    </div>
+
+    <script>
+        angular.module("myapp", []).controller("myctrl", function($scope) {
+            $scope.info = {
+                fpl: "Khóa học CNTT tại Fpoly",
+                course: "Lập trình Angular JS",
+            };
+        });
+    </script>
+
+</body>
+
+</html>

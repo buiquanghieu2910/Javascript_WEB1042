@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập ôn thi</title>
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+        }
+        
+        .container {
+            margin-left: 35%;
+        }
+        
+        label {
+            font-weight: bold;
+            display: block;
+        }
+        /* input {
+            margin: 8px 0px;
+            padding: 8px 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            width: 300px;
+        } */
+        
+        button {
+            padding: 8px 15px;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid #ccc;
+            margin: 8px 0;
+        }
+        
+        table {
+            margin-top: 15px;
+        }
+        
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            padding: 8px 25px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" onsubmit="return KiemTra()">
+            <h2>Thông tin khách hàng</h2>
+            <!-- <label for="hoten">Họ tên:</label> -->
+            <input placeholder="Họ và tên" type="text" name="hoten" id="hoten"> <br>
+
+            <!-- <label for="monhoc">Môn đang học:</label> -->
+            <input placeholder="Tuổi" type="number" name="honhoc" id="monhoc"> <br>
+
+            <!-- <label for="buoivang">Số buổi vắng:</label> -->
+            <input placeholder="Địa chỉ" type="text" name="buoivang" id="buoivang"> <br>
+            <!-- <div class="inp"> -->
+            <input type="radio" name="gender" value="Nam"><span>Nam</span>
+            <input type="radio" name="gender" value="Nữ"><span>Nữ</span>
+            <!-- </div> -->
+            <br>
+            <button>Thêm mới</button>
+        </form>
+
+        <div>
+            <table>
+                <tr id="show">
+
+                </tr>
+            </table>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Họ và tên</th>
+                    <th>Tuổi</th>
+                    <th>Địa chỉ</th>
+                    <th>Giới tính</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <div class="kta">
+            <button onclick="Check()">check</button>
+            <div id="thongbao"></div>
+        </div> -->
+    </div>
+    <script>
+        var sbm = 0;
+
+        function KiemTra() {
+            var hoten = document.getElementById("hoten").value;
+            var monhoc = document.getElementById("monhoc").value;
+            var buoivang = document.getElementById("buoivang").value;
+            var gender = document.getElementsByName("gender");
+            //kiểm tra họ tên
+            if (hoten.length < 8) {
+                alert("Họ tên phải lớn hơn 8 ký tự!");
+                return false;
+            } else {
+                hoten = document.getElementById("hoten").value;
+            }
+
+            //kiểm tra môn học
+            if (monhoc <= 0) {
+                alert("Tuổi phải là số dương lớn hơn 0 !");
+                return false;
+            } else {
+                monhoc = document.getElementById("monhoc").value;
+            }
+
+
+            //kiểm tra địa chỉ
+            if (buoivang.length <= 0) {
+                alert("Địa chỉ không được để trống !");
+                return false;
+            } else {
+                buoivang = document.getElementById("buoivang").value;
+            }
+
+            //kiểm tra giới tính
+            if (gender[0].checked !== true & gender[1].checked !== true) {
+                alert("Bạn phải chọn giới tính !");
+                return false;
+            } else {
+                // (gender = gender[0].checked) || (gender = gender[1].checked);
+                // error4.innerHTML = "";
+            }
+            for (var i = 0; i < gender.length; i++) {
+                if (gender[i].checked === true) {
+                    gender = gender[i];
+                }
+            }
+
+            var inforData = {
+                    "fullname": hoten,
+                    "age": monhoc,
+                    "dress": buoivang,
+                    "gender2": gender.value
+                }
+                // console.log(inforData);
+            arrInfor.push(inforData);
+            // console.log(arrInfor);
+            // showData();
+            var show = document.getElementById('show');
+            for (var i = 0; i < arrInfor.length; i++) {
+                show.innerHTML += `=
+          <td>
+          Họ và tên: ${arrInfor[i].fullname}<br>
+          Tuổi: ${arrInfor[i].age}<br>
+          Địa chỉ: ${arrInfor[i].dress}<br>
+          Giới tính: ${gender1} <br><br>
+            </td>
+          `
+            }
+
+            var the_tr = document.querySelectorAll("table tbody tr");
+            for (var i = 0; i < the_tr.length; i++) {
+                the_tr[sbm].children[0].innerHTML = hoten;
+                the_tr[sbm].children[1].innerHTML = monhoc;
+                the_tr[sbm].children[2].innerHTML = buoivang;
+                the_tr[sbm].children[3].innerHTML = gender.value;
+
+            }
+            sbm++;
+
+            return false;
+        }
+
+        function Check() {
+            var thongbao = document.getElementById("thongbao");
+            console.log(thongbao);
+            var the_tr = document.querySelectorAll("table tbody tr");
+
+            var kt = 0;
+            for (var i = 0; i < the_tr.length; i++) {
+                the_td = the_tr[i].children[2].innerText;
+                if (Number(the_td) > 4) {
+                    kt++;
+                    the_tr[i].style.background = "yellow";
+                }
+            }
+            console.log(kt);
+            thongbao.innerText = "Số sinh viên có buổi nghỉ lớn hơn 4 là: " + kt;
+
+        }
+    </script>
+</body>
+
+</html>

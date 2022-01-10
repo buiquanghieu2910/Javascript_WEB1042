@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bùi Quang Hiếu</title>
+    <script>
+        function doanSo()
+        {
+            var soNgauNhien = 10 + Math.round(Math.random()*5); //từ 10 -15
+            var doanSo = prompt("Bạn đoán số ngẫu nhiên là số mấy ??");
+            
+            if (Number(doanSo)== Number(soNgauNhien)) {
+                document.write("Bạn đã đoán đúng, số ngẫu nhiên là: "+soNgauNhien);
+
+            }
+
+            else if (Number(doanSo) < Number(soNgauNhien)) {
+                document.write("Số bạn đoán là: "+doanSo+" nhỏ hơn số ngẫu nhiên <br>");
+                document.write("Số ngẫu nhiên là: "+soNgauNhien);
+            }
+
+            else{
+                document.write("Số bạn đoán là: "+doanSo+" lớn hơn số ngẫu nhiên <br>");
+                document.write("Số ngẫu nhiên là: "+soNgauNhien);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <script>
+         doanSo();
+    </script>
+</body>
+</html>
